@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Minhas Poesias</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Dancing Script', cursive;
+      color: #f9f4f1;
+      padding: 2em;
+      text-align: center;
+      background: url('https://p4.wallpaperbetter.com/wallpaper/821/500/941/painting-vincent-van-gogh-abstract-the-starry-night-wallpaper-preview.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: -1;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: #f7d774;
+      margin-bottom: 0.2em;
+    }
+
+    .subtitle {
+      font-size: 3em;
+      font-style: italic;
+      color: #fefae0;
+      margin-bottom: 1em;
+      text-shadow: 1px 1px 3px #000;
+    }
+
+    .nav-buttons {
+      margin-bottom: 2em;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .nav-buttons button {
+      font-size: 1.5em;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      background-color: #f7d774;
+      color: #2e2e2e;
+      cursor: pointer;
+      font-family: 'Dancing Script', cursive;
+      transition: background-color 0.3s;
+    }
+
+    .nav-buttons button:hover {
+      background-color: #e6c758;
+    }
+
+    .stars {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 3em;
+    }
+
+    .star {
+      font-size: 2.5em;
+      cursor: pointer;
+      transition: transform 0.3s;
+      color: #f7d774;
+    }
+
+    .star:hover {
+      transform: scale(1.3);
+    }
+
+    .poem {
+      display: none;
+      max-width: 700px;
+      margin: 0 auto;
+      background: rgba(30, 31, 53, 0.85);
+      padding: 1.5em;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .poem.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      color: #f7d774;
+      margin-bottom: 0.5em;
+      font-size: 2em;
+    }
+
+    p {
+      white-space: pre-wrap;
+      line-height: 1.8;
+      font-size: 2em;
+    }
+
+    footer {
+      margin-top: 4em;
+      padding: 2em 1em;
+    }
+
+    .footer-quote {
+      font-size: 2.5em;
+      color: #f7d774;
+      font-style: italic;
+      text-shadow: 1px 1px 3px #000;
+    }
+
+    .section {
+      display: none;
+    }
+
+    .section.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Minhas Poesias</h1>
+  <p class="subtitle">sentimentos guardados entre estrelas e silêncios, dedicadas a você</p>
+
+  <div class="nav-buttons">
+    <button onclick="showSection('poesias')">Poesias</button>
+    <button onclick="showSection('musicas')">Músicas</button>
+  </div>
+
+  <div id="poesias" class="section active">
+    <div class="stars">
+      <span class="star" onclick="showPoem(1)">★</span>
+      <span class="star" onclick="showPoem(2)">★</span>
+      <span class="star" onclick="showPoem(3)">★</span>
+      <span class="star" onclick="showPoem(4)">★</span>
+      <span class="star" onclick="showPoem(5)">★</span>
+      <span class="star" onclick="showPoem(6)">★</span>
+      <span class="star" onclick="showPoem(7)">★</span>
+      <span class="star" onclick="showPoem(8)">★</span>
+      <span class="star" onclick="showPoem(9)">★</span>
+      <span class="star" onclick="showPoem(10)">★</span>
+    </div>
+
+    <div id="poem1" class="poem active">
+      <h2>Poesia 1</h2>
+      <p>
+        Só me escuta, é só isso
+
+eu não tô aqui pra consertar o que quebrou,
+nem pra pedir pra voltar.
+só queria que você me escutasse
+sem peso,
+sem pressa.
+
+no passado, eu tava perdida.
+fiz um monte de escolha errada
+tentando preencher um vazio que eu nem sabia de onde vinha.
+e acabei te machucando.
+não foi por mal,
+foi porque eu nem me entendia.
+
+"a gente erra tentando acertar"
+e eu errei contigo,
+mas não era você o problema.
+era eu lutando comigo mesma
+e descontando no mundo.
+
+eu te afastei,
+mesmo querendo que você ficasse.
+fui dura,
+mesmo querendo colo.
+confusa demais pra ver
+que você só queria me entender.
+
+hoje eu vejo.
+e eu mudei.
+não porque o tempo passou,
+mas porque doeu crescer.
+doeu me encarar.
+
+"eu só queria que você me visse agora…
+mais calma, mais eu."
+
+não tô pedindo nada,
+só deixando isso aqui:
+se um dia você lembrar de mim,
+espero que lembre com carinho.
+não pelo que a gente foi,
+mas por tudo que a gente tentou ser.
+
+"e se o coração for limpo,
+a alma reconhece."
+      </p>
+    </div>
+
+    <div id="poem2" class="poem"><h2>Poesia 2</h2><p>Então por que você voltou?
+
+        por que você voltou?
+        se era pra ser só silêncio,
+        por que veio bagunçar
+        o pouco que eu tava começando a organizar?
+        
+        não digo que sua presença é ruim,
+        mas também não sei se é boa.
+        é só…
+        estranha.
+        
+        talvez tudo isso seja um saco,
+        talvez eu também esteja confusa,
+        mas essa é a nossa situação.
+        meio termo.
+        meio tudo.
+        meio nada.
+        
+        quando você voltou,
+        eu comecei a te olhar diferente.
+        não porque você mudou,
+        mas porque eu comecei a prestar mais atenção.
+        
+        e agora fico me perguntando
+        quem é você, de verdade.
+        será que é só ilusão minha?
+        será que você nem é tudo isso que diz ser?
+        
+        mas ao mesmo tempo,
+        lá no fundo,
+        tem algo em você
+        que me faz acreditar
+        que você não é ruim.
+        só é perdido.
+        só não sabe lidar com as coisas
+        sem machucar quem realmente se importa.
+        
+        e isso, isso sim 
+        me pega.
+        
+        porque mesmo sabendo que você tá confuso,
+        eu ainda tenho vontade de entender,
+        de ficar,
+        de esperar que um dia você se enxergue
+        como eu enxergo você.</p></div>
+
+    <div id="poem3" class="poem"><h2>Poesia 3</h2><p>Reconheço você, mesmo mudado
+
+        você apareceu de novo,
+        e meu coração te reconheceu
+        antes da minha cabeça lembrar dos riscos.
+        
+        só que não é mais o mesmo sorriso,
+        nem a mesma leveza.
+        tem sombra nos seus olhos agora,
+        e silêncio demais nas suas palavras.
+        
+        eu tento alcançar o que restou de você
+        lá dentro.
+        mas tem algo em você que se esconde —
+        como quem não quer ser encontrado.
+        
+        "O tempo passa e um dia a gente aprende,
+        hoje eu sei realmente o que faz a minha mente..."
+        mas você…
+        você ainda tá preso em um labirinto
+        que nem sabe que construiu.
+        
+        "às vezes as pessoas demoram pra perceber
+        que perderam algo raro."
+        e mesmo sem promessas,
+        mesmo com tudo dizendo pra não,
+        eu fico.
+        
+        porque eu aprendi com você
+        a ser intensa,
+        e aprendi sozinha
+        a aguentar a bagunça que isso traz.
+        
+        "Eu só quero é ser feliz com você,
+        do jeito que der, como for..."
+        mesmo que você não seja mais
+        aquele garoto que eu conheci</p></div>
+
+    <div id="poem4" class="poem"><h2>Poesia 4</h2><p>E se ainda fosse
+
+        eu não te culpo
+        por querer só amizade agora.
+        mas também não consigo fingir
+        que meu peito não balança
+        toda vez que seu nome aparece.
+        
+        a gente já foi tanta coisa bonita
+        que dói tentar ser só leve.
+        
+        você voltou,
+        e eu sorri.
+        mas também me calei 
+        porque dizer o que sinto
+        não mudaria o que você decidiu.
+        
+        só queria que você soubesse:
+        eu ainda guardo tudo com carinho.
+        não te espero,
+        mas também não te esqueço.
+        
+        e mesmo que hoje sejamos só
+        duas pessoas tentando se manter por perto,
+        uma parte de mim
+        ainda se pergunta
+        e se…</p></div>
+
+    <div id="poem5" class="poem"><h2>Poesia 5</h2><p>Cartas que Ficaram
+
+        Você me deu cartinhas.
+        Do Pequeno Príncipe.
+        Disse que eu te cativava.
+        Que eu era importante.
+        E por um tempo… eu acreditei.
+        
+        Não sei se ainda sou.
+        Mas ainda guardo cada detalhe:
+        as palavras,
+        os gestos,
+        os presentinhos simples,
+        mas cheios de você.
+        
+        A amizade entre a gente
+        foi uma coisa bonita.
+        Estranhamente boa,
+        estranhamente ruim.
+        Porque mesmo quando tudo parecia difícil,
+        a gente se entendia de um jeito nosso.
+        
+        "Amar é cansativo. Você ama, ama, ama,
+        e depois desama."
+        — Clarice Lispector
+        
+        E às vezes, eu penso:
+        será que o amor tem que ser assim mesmo?
+        Tão cheio de começos e interrupções?
+        
+        “Amar é dar o que não se tem
+        a alguém que não o quer.”
+        — Jacques Lacan
+        
+        Mesmo com os silêncios,
+        mesmo com a bagunça que era nós,
+        você se importava comigo.
+        E isso… isso eu nunca vou esquecer.
+        
+        “A amizade é uma alma com dois corpos.”
+        — Aristóteles
+        
+        Talvez o que vivemos
+        não tenha sido um amor comum,
+        mas foi um laço.
+        Um nó difícil de desatar.
+        Um tipo de lembrança que vive
+        nas entrelinhas da saudade.
+        
+        “E no final das contas,
+        a gente se torna importante demais
+        para quem sabe muito bem esconder isso.”
+        — Clarice Lispector</p></div>
+
+    <div id="poem6" class="poem"><h2>Poesia 6</h2><p>Transbordo
+
+        Eu transbordo.
+        Tenho tanto amor guardado,
+        tanta vontade de viver tudo,
+        de sentir tudo…
+        com você.
+        
+        Mas, às vezes, te olho e não te encontro.
+        A gente passa o tempo junto,
+        a gente fala sobre tudo,
+        mas sinto você tão distante.
+        
+        É como se você estivesse perto
+        com o corpo,
+        mas longe com a alma.
+        
+        Você me cativou 
+        com seus jeitos estranhos,
+        seus silêncios,
+        suas confusões.
+        
+        E mesmo sabendo que isso talvez nunca dê certo,
+        você ainda é importante.
+        Fez parte de mim.
+        Fez parte da história de quem sou hoje.
+        
+        Guardo suas palavras antigas,
+        seus olhares,
+        seus risos meio tortos.
+        
+        Talvez amar demais machuque.
+        Talvez o problema não seja o amor,
+        mas a entrega que não foi recíproca.
+        
+        Mas mesmo assim…
+        mesmo com esse medo,
+        ainda existe em mim
+        um carinho que não vai embora.</p></div>
+
+    <div id="poem7" class="poem"><h2>Poesia 7</h2><p>Meio de Nada
+
+        Às vezes, eu te entendo.
+        Mas às vezes, não.
+        E talvez seja esse o problema:
+        às vezes.
+        
+        Você vem, fica, fala.
+        Depois silencia, esfria, some.
+        A gente ri num dia,
+        se desencontra no outro.
+        
+        Eu tento te alcançar,
+        mas você muda o caminho.
+        Te escuto, mas não te entendo.
+        Te olho, mas não te vejo inteiro.
+        
+        A gente não briga forte,
+        mas também não acalma por completo.
+        Ficamos no quase.
+        No meio.
+        No fim que nunca é fim.
+        
+        E eu não sei se te espero,
+        se te deixo,
+        ou se apenas aceito
+        que com você,
+        tudo começa…
+        mas nunca se resolve.</p></div>
+
+    <div id="poem8" class="poem"><h2>Poesia 8</h2><p>Entre Linhas e Silêncios
+
+        Você me olha como quem quer ficar,
+        mas fala como quem já foi.
+        Me toca como se eu fosse tudo,
+        e some como se eu fosse nada.
+        
+        Diz que sente,
+        mas nunca sabe o quê.
+        Diz que quer,
+        mas nunca vem.
+        
+        Você é feito neblina:
+        chega devagar,
+        enche tudo,
+        e depois desaparece.
+        
+        E eu fico aqui, tentando decifrar
+        o que seus olhos não dizem
+        e o que seu silêncio grita.
+        
+        Talvez o problema
+        não seja o que você sente.
+        Talvez…
+        é que você nem sabe o que sente.</p></div>
+
+    <div id="poem9" class="poem"><h2>Poesia 9</h2><p>Talvez Eu Sinta
+
+        Talvez eu sinta demais.
+        Ou talvez eu só espere o que ninguém quer dar.
+        Te enxerguei como abrigo,
+        mas acabei ficando no frio.
+        
+        Você chegou como se soubesse o que eu precisava,
+        mas partiu sem dizer por quê.
+        E agora eu fico aqui,
+        tentando entender onde me perdi.
+        
+        Será que fui eu?
+        Será que foi você?
+        Ou será que nunca houve um "nós" de verdade?</p></div>
+
+    <div id="poem10" class="poem"><h2>Poesia 10</h2><p>[carta nunca enviada – pra você]
+
+        Gab,
+        
+        eu não sei nem por onde começar.
+        talvez dizendo que eu sinto muito.
+        ou talvez dizendo que ainda penso em você… mais do que deveria.
+        
+        eu nunca te escrevi isso.
+        nem quando tudo começou a ruir,
+        nem quando eu te via de longe fingindo que estava bem.
+        mas hoje, com tudo calmo por fora e um furacão por dentro,
+        eu precisava te dizer.
+        
+        você foi importante.
+        muito mais do que qualquer um imaginava.
+        mais do que eu mesma conseguia admitir na época.
+        e eu sei que nosso relacionamento não foi fácil.
+        a gente carregava peso demais pra quem só queria amar.
+        tinham regras, olhares, pressões 
+        meus pais, nossos amigos, o medo do que iam dizer.
+        e eu deixei isso tudo me engolir.
+        
+        quando você me olhava,
+        era como se o mundo ficasse em silêncio.
+        mas mesmo assim, eu me perdi.
+        quando me envolvi com ela…
+        não era amor.
+        não era você.
+        era só um eco vazio
+        de alguém que queria fugir de tudo
+        e acabou se escondendo no pior lugar possível.
+        
+        eu via teu olhar me perguntando "por quê?"
+        e eu não sabia responder.
+        porque a verdade é que nem eu entendia.
+        
+        ela…
+        ela nunca foi interessante pra mim.
+        nunca foi o que você era.
+        aquilo era tóxico, sufocante.
+        e ainda assim, eu fiquei.
+        presa.
+        com medo.
+        com culpa.
+        
+        e você…
+        ficou com o coração em pedaços,
+        enquanto eu tentava montar o meu
+        com peças que nem me pertenciam.
+        
+        eu queria ter corrido até você.
+        no meio da rua, da festa, da vida — tanto faz.
+        só queria dizer que te amava,
+        mesmo que do meu jeito errado.
+        mas não fui.
+        me calei.
+        e te perdi.
+        
+        mas se um dia…
+        se um dia você sentir saudade,
+        ou vontade de saber a verdade,
+        basta me procurar.
+        você vai saber das coisas que eu tenho a dizer.
+        sem máscaras, sem desculpas.
+        só eu, você
+        e tudo aquilo que nunca foi dito em voz alta.
+        
+        com carinho,
+        com saudade,
+        com amor 
+        ainda.
+        </p></div>
+  </div>
+
+  <div id="musicas" class="section">
+    <h2>Músicas que me lembram você</h2>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/ZoQkjeWYi2o?si=zERmmZ6YB1TseCVo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <br><br>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/wu02bsgcmBg?si=XnWa_kQ5u0CExh4d" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+
+  <footer>
+    <p class="footer-quote">"Tu te tornas eternamente responsável por aquilo que cativas."</p>
+  </footer>
+
+  <script>
+    function showPoem(num) {
+      const poems = document.querySelectorAll('.poem');
+      poems.forEach(p => p.classList.remove('active'));
+      document.getElementById('poem' + num).classList.add('active');
+    }
+
+    function showSection(sectionId) {
+      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+      document.getElementById(sectionId).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
